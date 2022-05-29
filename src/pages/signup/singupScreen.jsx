@@ -11,6 +11,7 @@ function SignupScreen(props) {
     useEffect(() => {
         if (token) {
             navigate('/')
+            window.location.reload()
         }
     }, [token])
 
