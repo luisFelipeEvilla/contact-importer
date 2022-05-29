@@ -9,6 +9,7 @@ import Header from './partials/header/header'
 import SigninScreen from './pages/singin/signinScreen';
 import SignupScreen from './pages/signup/singupScreen';
 import ConfigScreen from './pages/config/configScreen';
+import UploadScreen from './pages/upload/uploadScreen';
 
 // components
 function App() {
@@ -25,6 +26,7 @@ function App() {
               <Route path='/signin'  exact={true} element={token ? <div>Home</div> : <SigninScreen/>}></Route>
               <Route path='/signup'  exact={true} element={token ? <div>Home</div> : <SignupScreen/>}></Route>
               <Route path='/config'  exact={true} element={token ? <ConfigScreen/> : <Navigate to="/signin"/>}></Route>
+              <Route path='/upload'  exact={true} element={token ? <UploadScreen/> : <Navigate to="/signin"/>}></Route>
             </Routes>
           </div>
         </main>

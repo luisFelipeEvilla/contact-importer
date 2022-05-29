@@ -28,6 +28,9 @@ const Header = () => {
                             <Link className="nav-link active" aria-current="page" to="/">Home</Link>
                         </li>
                         {token ? <li className="nav-item">
+                            <Link className="nav-link active" aria-current="page" to="/upload">Upload</Link>
+                        </li> : <div></div>}
+                        {token ? <li className="nav-item">
                             <Link className="nav-link active" aria-current="page" to="/config">Config</Link>
                         </li> : <div></div>}
                         {
