@@ -1,0 +1,48 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.form-container {
+    text-align: center;
+    max-width: 800px;
+    min-width: 400px;
+    border: 0.5px solid black;
+    border-radius: 10px;
+    background-color: white;
+    -webkit-box-shadow: 5px 5px 15px -3px #000000; 
+    box-shadow: 5px 5px 15px -3px #000000;
+}
+
+.form-title {
+    display: inline-block;
+    text-align: center;
+}
+
+.message-form-container {
+    margin-top: 0 !important;
+    max-width: 90%;
+}
+
+.form-container .row {
+    margin: 20px;
+}
+
+.form-group {
+    text-align: left;
+}
+
+.form-container textarea {
+    overflow-y: scroll;
+    max-height: 200px;
+}
+
+.form-container label {
+    font-weight: 500;
+}
+
+.submit-container {
+
+}

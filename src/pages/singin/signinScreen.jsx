@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from "react";
 import { Link, useNavigate} from "react-router-dom"
-import PropTypes from 'prop-types';
 import axios from "axios";
 
 import './signin.css'
@@ -65,7 +64,4 @@ function SigninScreen(props) {
     )
 }
 
-SigninScreen.propTypes = {
-    setToken: PropTypes.func.isRequired
-}
 export default SigninScreen

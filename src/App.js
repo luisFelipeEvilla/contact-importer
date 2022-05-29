@@ -6,7 +6,8 @@ import { useState } from 'react';
 import Header from './partials/header/header'
 
 // screens
-import SigninScreen from './pages/signin.jsx';
+import SigninScreen from './pages/singin/signinScreen';
+import SignupScreen from './pages/signup/singupScreen';
 
 // components
 function App() {
@@ -20,9 +21,8 @@ function App() {
           <div className='content'>
             <Routes>
               <Route path="/" exact={true} element={<div className="App"></div>}></Route>
-              <Route path='/signin' setToken={setToken} exact={true} element={token ? <div></div> : <SigninScreen/>}>
-                
-              </Route>
+              <Route path='/signin'  exact={true} element={token ? <div>Home</div> : <SigninScreen/>}></Route>
+              <Route path='/signup'  exact={true} element={token ? <div>Home</div> : <SignupScreen/>}></Route>
             </Routes>
           </div>
         </main>
