@@ -10,6 +10,7 @@ import SigninScreen from './pages/singin/signinScreen';
 import SignupScreen from './pages/signup/singupScreen';
 import ConfigScreen from './pages/config/configScreen';
 import UploadScreen from './pages/upload/uploadScreen';
+import HomeScreen from './pages/home/homeScreen';
 
 // components
 function App() {
@@ -22,9 +23,9 @@ function App() {
         <main className='main'>
           <div className='content'>
             <Routes>
-              <Route path="/" exact={true} element={<div className="App"></div>}></Route>
-              <Route path='/signin'  exact={true} element={token ? <div>Home</div> : <SigninScreen/>}></Route>
-              <Route path='/signup'  exact={true} element={token ? <div>Home</div> : <SignupScreen/>}></Route>
+              <Route path="/" exact={true} element={<HomeScreen/>}></Route>
+              <Route path='/signin'  exact={true} element={token ? <HomeScreen/> : <SigninScreen/>}></Route>
+              <Route path='/signup'  exact={true} element={token ? <HomeScreen/> : <SignupScreen/>}></Route>
               <Route path='/config'  exact={true} element={token ? <ConfigScreen/> : <Navigate to="/signin"/>}></Route>
               <Route path='/upload'  exact={true} element={token ? <UploadScreen/> : <Navigate to="/signin"/>}></Route>
             </Routes>
