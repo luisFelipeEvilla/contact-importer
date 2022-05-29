@@ -56,7 +56,7 @@ function ConfigScreen() {
         }
     }
     return (
-        <div className="container signin-container">
+        <div className="container config-container">
             <div className="form-container">
                 <h2 className="row form-title">Almacenar configuración</h2>
                 <div className="row">
