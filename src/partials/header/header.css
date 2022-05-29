@@ -1,0 +1,40 @@
+#header {
+    background-color: #0A0903 !important;
+    min-width: 100%;
+    min-height: 70px;
+    z-index: 1;
+}
+
+.brand-logo {
+    max-height: 2.5rem;
+    max-width: 8rem;
+}
+
+#header .nav-link {
+    font-size: 1.1em;
+    color: #fffcff;
+    border-bottom: transparent solid 1px;
+}
+
+#navbarNav {
+    justify-content: flex-end;
+    padding: 0 10px;
+}
+
+.nav-item {
+    margin: 5px;
+}
+
+.nav-item:hover {
+    border-bottom: #F1FAEE solid 1px;
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 0px 9px 20px 9px rgba(14,26,42,0.27); 
+    box-shadow: 0px 10px 13px -7px #000000, 0px 9px 20px 9px rgba(14,26,42,0.27);
+}
+
+.navbar-toggler {
+    color: #fffcff
+}
+
+.navbar-toggler-icon {
+    color: #fffcff
+}
