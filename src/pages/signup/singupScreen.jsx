@@ -33,7 +33,7 @@ function SignupScreen(props) {
                 setToken(result.data.token)
             }
         }).catch(error => {
-            console.log(error);
+            alert(error.response.data.error);
         })
     }
 

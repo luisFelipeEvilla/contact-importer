@@ -5,23 +5,34 @@ import Spinner from "../../components/spinner/spinner";
 
 import './homeScreen.css'
 import userLogo from '../../assets/user.png';
+import { useNavigate } from "react-router-dom";
 
 function HomeScreen() {
     const [token, setToken] = useState(localStorage.getItem('token'));
     const [pagesCount, setPagesCount] = useState(0);
     const [contacts, setContacts] = useState([]);
-    const [actualPage, setActualPage] = useState(1);
+    const [actualPage, setActualPage] = useState(0);
     const [loading, setLoading] = useState(true);
 
     const contactsPerPgae = 9
 
+    const navigate = useNavigate();
+
     useEffect(() => {
-        getPagesCount();
+        if (!token) {
+            navigate('/signin')
+        } else {
+            getPagesCount();
+        }
     }, [token])
 
     useEffect(() => {
-        getContacts();
-    }, [pagesCount, actualPage])
+        if (!token) {
+            navigate('/signin')
+        } else {
+            getContacts();
+        }
+    }, [actualPage])
 
     function getPagesCount() {
         axios.get('http://localhost:4000/contacts/count', {
@@ -33,6 +44,7 @@ function HomeScreen() {
             .then(response => {
                 if (response.status === 200) {
                     setPagesCount(Math.ceil(response.data / contactsPerPgae));
+                    setActualPage(1)
                 }
             })
     }
@@ -45,7 +57,7 @@ function HomeScreen() {
             },
             params: {
                 limit: contactsPerPgae,
-                offset: (actualPage - 1) * contactsPerPgae
+                offset: actualPage * contactsPerPgae
             }
         })
             .then(response => {
