@@ -41,27 +41,28 @@ function UploadScreen() {
         }
     }
     return (
-        <div className="upload-container">
-            <div className="form-container">
-                <h2 className="row form-title">Upload Contacts</h2>
-                <div className="row">
-                    <div className="form-group">
-                        <label for="contacts" className="form-label">Contacts file</label>
-                        <input className="form-control" id="contacts" type="file" ></input>
+        loading ? <Spinner /> :
+            <div className="upload-container">
+                <div className="form-container">
+                    <h2 className="row form-title">Upload Contacts</h2>
+                    <div className="row">
+                        <div className="form-group">
+                            <label for="contacts" className="form-label">Contacts file</label>
+                            <input className="form-control" id="contacts" type="file" ></input>
+                        </div>
+                    </div>
+                    <div className="submit-container">
+                        <button className="btn btn-success" type="submit" onClick={e => handleSubmit(e)}>Enviar</button>
                     </div>
                 </div>
-                <div className="submit-container">
-                    <button className="btn btn-success" type="submit" onClick={e => handleSubmit(e)}>Enviar</button>
+
+                <div className="table-container">
+                    {
+                        fails.length > 0 ? <ContactsTable contacts={fails}></ContactsTable> : <div></div>
+                    }
                 </div>
-            </div>
 
-            <div className="table-container">
-                {
-                    !loading ? <ContactsTable contacts={fails}></ContactsTable> : <Spinner />
-                }
             </div>
-
-        </div>
     )
 }
 
