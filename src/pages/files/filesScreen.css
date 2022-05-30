@@ -14,6 +14,7 @@ table {
     border: .5px solid gray;
     -webkit-box-shadow: 5px 5px 15px -3px #000000;
     box-shadow: 5px 5px 15px -3px #000000;
+    margin-bottom: 20px;
 }
 
 table thead,
