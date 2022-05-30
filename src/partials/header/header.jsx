@@ -8,7 +8,7 @@ const Header = () => {
     const [token, setToken] = useState(localStorage.getItem('token'));
     const navigate = useNavigate();
 
-    const handleLogout = () => {   
+    const handleLogout = () => {
         localStorage.removeItem('token');
         navigate('/signin')
         window.location.reload();
@@ -24,9 +24,9 @@ const Header = () => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
-                        <li className="nav-item">
+                        {token ? <li className="nav-item">
                             <Link className="nav-link active" aria-current="page" to="/">Home</Link>
-                        </li>
+                        </li> : <div></div>}
                         {token ? <li className="nav-item">
                             <Link className="nav-link active" aria-current="page" to="/files">Files</Link>
                         </li> : <div></div>}
