@@ -26,7 +26,6 @@ function FilesScreen() {
         }).then(response => {
             if (response.status === 200) {
                 setFiles(response.data)
-                console.log(response.data);
             }
         }).catch(err => {
             alert(err)
