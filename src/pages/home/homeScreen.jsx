@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import ReactPaginate from 'react-paginate'
 import axios from "axios";
 import Spinner from "../../components/spinner/spinner";
+import { format } from 'fecha';
 
 import './homeScreen.css'
 import userLogo from '../../assets/user.png';
@@ -57,7 +58,7 @@ function HomeScreen() {
     }
 
     return (
-        <div className="container centers-container">
+        <div className="container contacts-container">
             {
                 loading ? <Spinner></Spinner> :
                     <div>
@@ -69,11 +70,11 @@ function HomeScreen() {
                                             <img src={userLogo} className="card-img-top" alt="..." />
                                             <div className="card-body">
                                                 <h5 className="card-title">{contact.name}</h5>
-                                                <p className="card-subtitle mb-2 text-muted">Birth Date: {contact.birth_date}</p>
-                                                <p className="card-subtitle mb-2 text-muted">Phone: {contact.phone}</p>
-                                                <p className="card-subtitle mb-2 text-muted">Address: {contact.address}</p>
-                                                <p className="card-subtitle mb-2 text-muted">Credit Card: {contact.credit_card}</p>
-                                                <p className="card-subtitle mb-2 text-muted">Email: {contact.email}</p>
+                                                <p className="card-subtitle mb-2 text-muted"><b>Phone:</b> {contact.phone}</p>
+                                                <p className="card-subtitle mb-2 text-muted"><b>Email:</b> {contact.email}</p>
+                                                <p className="card-subtitle mb-2 text-muted"><b>Address:</b> {contact.address}</p>
+                                                <p className="card-subtitle mb-2 text-muted"><b>Credit Card:</b> {contact.credit_card}</p>
+                                                <p className="card-subtitle mb-2 text-muted"><b>Birth Date:</b> {format(new Date(contact.birth_date), 'YYYY MMMM DD')}</p>
                                             </div>
                                         </div>
                                     </div>)
