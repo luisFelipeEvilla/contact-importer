@@ -15,7 +15,7 @@ function FilesScreen() {
     const [loading, setLoading] = useState(true);
     const [files, setFiles] = useState([]);
     const [pagesCount, setPagesCount] = useState(0);
-    const [actualPage, setActualPage] = useState(1);
+    const [actualPage, setActualPage] = useState(0);
 
     const filesPerPage = 10;
 
@@ -24,7 +24,6 @@ function FilesScreen() {
     }, [token])
 
     useEffect(() => {
-        console.log(actualPage);
         getFiles();
     }, [pagesCount, actualPage])
 
