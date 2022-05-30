@@ -1,0 +1,93 @@
+.contacts-container {
+    width: 80%;
+}
+
+.card-container {
+    margin: 15px 0;
+}
+
+.container {
+    padding-top: 20px;
+    align-items: center;
+    height: 100%;
+}
+
+.img-slider-container {
+    
+}
+
+.img-slider-container {
+    margin-bottom: 50px;
+}
+
+
+.form{
+    position: relative;
+}
+
+.form .bi-search{
+
+    position: absolute;
+    top:17px;
+    left: 20px;
+    color: #9ca3af;
+
+}
+
+.form span{
+
+        position: absolute;
+    right: 17px;
+    top: 13px;
+    padding: 2px;
+    border-left: 1px solid #d1d5db;
+
+}
+
+.left-pan{
+    padding-left: 7px;
+}
+
+.left-pan i{
+   
+   padding-left: 10px;
+}
+
+.form-input{
+
+    height: 55px;
+    text-indent: 33px;
+    border-radius: 10px;
+}
+
+.form-input:focus{
+
+    box-shadow: none;
+    border:none;
+}
+
+.card img:hover {
+    cursor: pointer;
+}
+.card:hover {
+    transform: scale(1.02); 
+}
+
+.card-title {
+    overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 1; /* number of lines to show */
+           line-clamp: 1; 
+   -webkit-box-orient: vertical;
+} 
+
+.btn-center {
+    display: block;
+    align-items: center;
+}
+
+.pagination-container {
+    display: flex;
+    justify-content: flex-end;
+}
