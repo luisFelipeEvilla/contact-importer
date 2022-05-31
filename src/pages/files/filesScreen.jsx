@@ -24,7 +24,6 @@ function FilesScreen() {
     }, [token])
 
     useEffect(() => {
-        console.log(actualPage);
         getFiles();
     }, [pagesCount, actualPage])
 
