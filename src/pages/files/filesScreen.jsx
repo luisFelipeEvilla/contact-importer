@@ -3,6 +3,7 @@ import axios from "axios";
 import TimeAgo from "javascript-time-ago";
 import ReactPaginate from "react-paginate";
 import en from 'javascript-time-ago/locale/en';
+import { Link } from "react-router-dom";
 
 import './filesScreen.css'
 import Spinner from "../../components/spinner/spinner";
@@ -81,6 +82,9 @@ function FilesScreen() {
                             <th>
                                 Status
                             </th>
+                            <th>
+
+                            </th>
                         </thead>
                         <tbody>
                             {
@@ -91,6 +95,7 @@ function FilesScreen() {
                                             <td>{file.name}</td>
                                             <td>{timeAgo.format(new Date(file.createdat))}</td>
                                             <td>{file.status}</td>
+                                            <td><Link className="btn btn-info"to={`/file/${file.file_id}`}>Detalles</Link></td>
                                         </tr>
                                     )
                                 })
