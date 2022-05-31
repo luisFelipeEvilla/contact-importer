@@ -4,11 +4,14 @@ import axios from "axios";
 import ContactsTable from "../../components/contactTable/contactsTable";
 import Spinner from "../../components/spinner/spinner";
 import './uploadScreen.css';
+import { useNavigate } from "react-router-dom";
 
 function UploadScreen() {
     const [token, setToken] = useState(localStorage.getItem('token'));
     const [loading, setLoading] = useState(false);
     const [fails, setFails] = useState([]);
+
+    const navigate = useNavigate();
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -27,13 +30,13 @@ function UploadScreen() {
                 }
             }).then(async response => {
                 if (response.status === 200) {
-                    const filtrered = await response.data.filter(result => result.created === false)
-                    setFails(filtrered);
-                    setLoading(false);
-                } 
-            }).catch(error => {
-                setLoading(false);
-                alert(error.response.data.error);
+                    setLoading(false)
+                    navigate('/files');
+                } else {
+                    if (response.error) {
+                        alert(response.error)
+                    }
+                }
             })
         } else {
             alert('should select a file')
@@ -54,13 +57,6 @@ function UploadScreen() {
                         <button className="btn btn-success" type="submit" onClick={e => handleSubmit(e)}>Enviar</button>
                     </div>
                 </div>
-
-                <div className="table-container">
-                    {
-                        fails.length > 0 ? <ContactsTable contacts={fails}></ContactsTable> : <div></div>
-                    }
-                </div>
-
             </div>
     )
 }

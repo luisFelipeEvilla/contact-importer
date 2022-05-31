@@ -12,6 +12,7 @@ import ConfigScreen from './pages/config/configScreen';
 import UploadScreen from './pages/upload/uploadScreen';
 import HomeScreen from './pages/home/homeScreen';
 import FilesScreen from './pages/files/filesScreen';
+import FileScreen from './pages/file/fileScreen';
 
 // components
 function App() {
@@ -29,6 +30,7 @@ function App() {
               <Route path='/signup'  exact={true} element={token ? <HomeScreen/> : <SignupScreen/>}></Route>
               <Route path='/config'  exact={true} element={token ? <ConfigScreen/> : <Navigate to="/signin"/>}></Route>
               <Route path='/upload'  exact={true} element={token ? <UploadScreen/> : <Navigate to="/signin"/>}></Route>
+              <Route path='/file/:id' element={token ? <FileScreen/> : <Navigate to="/signin"/>}></Route>
               <Route path='/files'  exact={true} element={token ? <FilesScreen/> : <Navigate to="/signin"/>}></Route>
             </Routes>
           </div>
