@@ -29,12 +29,11 @@ function UploadScreen() {
                 if (response.status === 200) {
                     const filtrered = await response.data.filter(result => result.created === false)
                     setFails(filtrered);
-                    setLoading(false)
-                } else {
-                    if (response.error) {
-                        alert(response.error)
-                    }
-                }
+                    setLoading(false);
+                } 
+            }).catch(error => {
+                setLoading(false);
+                alert(error.response.data.error);
             })
         } else {
             alert('should select a file')

@@ -84,7 +84,8 @@ function HomeScreen() {
                                                 <p className="card-subtitle mb-2 text-muted">Birth Date: {contact.birth_date}</p>
                                                 <p className="card-subtitle mb-2 text-muted">Phone: {contact.phone}</p>
                                                 <p className="card-subtitle mb-2 text-muted">Address: {contact.address}</p>
-                                                <p className="card-subtitle mb-2 text-muted">Credit Card: {contact.credit_card}</p>
+                                                <p className="card-subtitle mb-2 text-muted">Credit Card Network: {contact.credit_card_network}</p>
+                                                <p className="card-subtitle mb-2 text-muted">Credit Card Number: {contact.credit_card}</p>
                                                 <p className="card-subtitle mb-2 text-muted">Email: {contact.email}</p>
                                             </div>
                                         </div>
