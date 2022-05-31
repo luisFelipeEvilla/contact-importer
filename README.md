@@ -26,4 +26,6 @@ Open your terminal clone the repository typing the next commando
 1. First you need to run the backend REST API service see [contact-importer-api](https://github.com/luisFelipeEvilla/contact-importer-api.git)
 2. Open the project root directory on your terminal and type
 
+`npm install`
+
 `npm start`
